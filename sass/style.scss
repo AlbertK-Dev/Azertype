@@ -1,0 +1,16 @@
+@import "libs/normalize.scss";
+
+body {
+    
+   background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
+   color: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+p{
+   display: block;
+   padding: 50px;
+   font-size: xx-large;
+}
