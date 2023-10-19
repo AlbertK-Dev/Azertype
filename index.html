@@ -1,16 +1,69 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <title>AzerType</title>
 </head>
+
 <body>
-    <div class="main">
-        <p>Hello World!</p>
-    </div>
-    
-    <script src="scripts/script.js"></script>
+    <main>
+        <header>
+            <h1>AzerType</h1>
+            <h2>L'application pour écrire plus vite !</h2>
+            <h3>AzerType est une application en ligne pour apprendre à taper
+                plus vite au clavier !
+            </h3>
+        </header>
+        <section>
+            <div class="appblock">
+                <h3 class="appblock__messagedechoix">
+                    choisissez votre option et tapez la proposition qui s'affiche dans le champ
+                    en dessous.</h3>
+                <div class="appblock__zoneBtnRadio">
+                    <div class="appblock__zoneBtnRadio--row">
+                        <label for="Mots">Mots</label>
+                        <input type="radio" name="choix" id="Mots">
+                    </div>
+                    ou
+                    <div class="appblock__zoneBtnRadio--row">
+                        <label for="Phrases">Phrases</label>
+                        <input type="radio" name="choix" id="Phrases">
+                    </div>
+
+                </div>
+                <div class="appblock__zoneMot">ici le texte à recopier</div>
+                <div class="appblock__zoneSaisieUtilisateur">
+                    <input type="text" placeholder="votre texte ici...">
+                    <button type="button">Valider</button>
+                </div>
+                <div class="appblock__zoneScore">
+                    <div class="texte">Votre score</div>
+                    <div class="score">0 / 0</div>
+                </div>
+                <div class="appblock__zonePartage">
+                    <button type="button">partager</button>
+                    <form action="">
+                        un formulaire de partage
+                    </form>
+                </div>
+
+            </div>
+        </section>
+        <footer>
+            @copyright - AlbertK
+        </footer>
+    </main>
+
+
+
+
+
+    <!-- <script src="scripts/functionsDuJeux.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/script.js"></script> -->
 </body>
+
 </html>

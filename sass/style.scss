@@ -1,16 +1,124 @@
-@import "libs/normalize.scss";
 
-body {
-    
-   background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
-   color: #fff;
+$base-color:skyblue;
+$base-text-color: rgb(13, 85, 114);
+
+@mixin bgBaseColorSaturation($nivDARK : 0%){
+   background-color: darken($base-color, $nivDARK);
+}
+@mixin tcBaseColorLuminosity($nivLIGHT : 0%){
+   color: lighten( $base-text-color , $nivLIGHT );
+}
+
+@mixin flexionCol{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+}
+@mixin flexcenter{
    display: flex;
    justify-content: center;
    align-items: center;
+}
+
+body {
+   @include bgBaseColorSaturation(0%);
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+main{ 
+   height: 700px;
+   padding: 50px;
+   padding-bottom: 0%;
+   margin: auto;
+   @include bgBaseColorSaturation(0%);
+   @include flexionCol();
+}
+header{
+   @include flexionCol();
+}
+/*Gérons les h1 h2 et h3*/
+@for $i from 1 through 3{
+  h#{$i}{
+   font-size: (4 - $i)*1em;
+   margin: 0;
+   padding: 5px;
+   
+   @include tcBaseColorLuminosity(5*$i*1%);
+  }
+
+} 
+section{
+   
+   padding: 5%;
+   padding-top: 1%;
+   padding-bottom: 1%;
+   @include flexcenter();
+   height: 60%;
 
 }
-p{
-   display: block;
-   padding: 50px;
-   font-size: xx-large;
+
+.appblock{
+   @include flexionCol();
+   border-radius: 15px;
+   height: 80%;
+   width: 70%;
+   @include bgBaseColorSaturation(50%);
+   padding: 15px;
+   color: whitesmoke;
+   &__messagedechoix{
+      max-width: 80%;
+      text-align: center;
+      font-size: 1.2em;
+      color: whitesmoke;
+   }
+   &__zoneBtnRadio{
+      @include bgBaseColorSaturation(40%);
+      width: 70%;
+      display: flex;
+      justify-content: space-between;
+   }
+   &__zoneMot{
+      width: 90%;
+      margin: 5px 2%;
+      height: 70px;
+      border-radius: 15px;
+      font-size: 2em;
+      font-weight: bold;
+      @include bgBaseColorSaturation(0%);
+      @include flexcenter();
+      @include tcBaseColorLuminosity(20%)
+      
+   }
+   &__zoneSaisieUtilisateur{
+      width: 90%;
+      margin: 5px 2%;
+      height: 35px;
+      display: flex;
+      justify-content: space-between;
+      input{
+         flex:60%;
+         border-radius: 10px;
+         margin-right: 5px ;
+      }
+      button{
+         flex: 20%;
+         border-radius: 10px;
+      }
+   }
+   &__zoneScore{
+      display: flex;
+      width: 80%;
+      justify-content: flex-end;
+   }
+}
+
+footer{
+   height: 50px;
+   width: 100%;
+   @include bgBaseColorSaturation(50%);
+   @include flexcenter();
+   @include tcBaseColorLuminosity(90%)
 }
