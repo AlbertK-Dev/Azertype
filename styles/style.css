@@ -17,6 +17,17 @@ main {
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (min-width : 480px), screen and (max-width : 700px), screen and (min-device-width : 480px), screen and (max-device-width : 700px) {
+  main {
+    padding: 20px;
+  }
+}
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  main {
+    padding: 5px;
+    height: auto;
+  }
+}
 
 header {
   display: flex;
@@ -30,6 +41,7 @@ h1 {
   font-size: 3em;
   margin: 0;
   padding: 5px;
+  text-align: center;
   color: #106689;
 }
 
@@ -37,6 +49,7 @@ h2 {
   font-size: 2em;
   margin: 0;
   padding: 5px;
+  text-align: center;
   color: #1277a0;
 }
 
@@ -44,6 +57,7 @@ h3 {
   font-size: 1em;
   margin: 0;
   padding: 5px;
+  text-align: center;
   color: #1588b7;
 }
 
@@ -56,6 +70,18 @@ section {
   align-items: center;
   height: 60%;
 }
+@media screen and (min-width : 480px), screen and (max-width : 700px), screen and (min-device-width : 480px), screen and (max-device-width : 700px) {
+  section {
+    padding: 1%;
+    height: 65%;
+  }
+}
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  section {
+    padding: 0;
+    height: auto;
+  }
+}
 
 .appblock {
   display: flex;
@@ -65,9 +91,25 @@ section {
   border-radius: 15px;
   height: 80%;
   width: 70%;
+  min-width: 600px;
   background-color: #104b63;
   padding: 15px;
   color: whitesmoke;
+}
+@media screen and (min-width : 480px), screen and (max-width : 700px), screen and (min-device-width : 480px), screen and (max-device-width : 700px) {
+  .appblock {
+    min-width: auto;
+    width: 100%;
+    margin: 5px auto;
+    padding: 2px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+}
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  .appblock {
+    height: auto;
+  }
 }
 .appblock__messagedechoix {
   max-width: 80%;
@@ -80,6 +122,27 @@ section {
   width: 70%;
   display: flex;
   justify-content: space-between;
+}
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  .appblock__zoneBtnRadio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 99%;
+    height: 50px;
+    font-size: 80%;
+  }
+}
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  .appblock__zoneBtnRadio--row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 70px;
+    width: 70px;
+    height: 50px;
+  }
 }
 .appblock__zoneMot {
   width: 90%;
@@ -94,26 +157,119 @@ section {
   align-items: center;
   color: #1799ce;
 }
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  .appblock__zoneMot {
+    padding: 0;
+    height: 50px;
+    font-size: 80%;
+  }
+}
 .appblock__zoneSaisieUtilisateur {
   width: 90%;
   margin: 5px 2%;
-  height: 35px;
+  height: 40px;
   display: flex;
   justify-content: space-between;
+  color: #1799ce;
+}
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  .appblock__zoneSaisieUtilisateur {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    min-height: 50px;
+  }
 }
 .appblock__zoneSaisieUtilisateur input {
-  flex: 60%;
+  width: 70%;
   border-radius: 10px;
-  margin-right: 5px;
+  border: 2px ridge skyblue;
+  background-color: #5bbce4;
+  color: #0e5877;
+  font-size: 1.3em;
 }
-.appblock__zoneSaisieUtilisateur button {
-  flex: 20%;
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  .appblock__zoneSaisieUtilisateur input {
+    width: 100%;
+    height: 35px;
+  }
+}
+.appblock__zoneSaisieUtilisateur input::placeholder {
+  color: #1277a0;
+}
+.appblock button {
+  width: 25%;
   border-radius: 10px;
+  border: 2px ridge skyblue;
+  background-color: #186c8e;
+  color: #e8f6fc;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  .appblock button {
+    width: 90%;
+    height: 35px;
+    margin-top: 5px;
+  }
 }
 .appblock__zoneScore {
+  width: 50%;
+  border-radius: 50%;
   display: flex;
-  width: 80%;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  background-color: #45b3e0;
+  font-size: 1.5em;
+  color: #0d5572;
+}
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  .appblock__zoneScore {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    width: 80%;
+  }
+}
+.appblock__zoneScore .texte {
+  margin: 0 10px;
+}
+.appblock__zoneScore .score {
+  margin: 0 10px;
+  font-weight: bolder;
+}
+.appblock__zonePartage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  .appblock__zonePartage {
+    width: 99%;
+  }
+}
+.appblock__zonePartage button {
+  border: 2px ridge skyblue;
+  background-color: #186c8e;
+  color: #e8f6fc;
+  border-radius: 15px;
+  width: 70%;
+  height: 35px;
+  cursor: pointer;
+}
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  .appblock__zonePartage button {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+.appblock__zonePartage form {
+  display: none;
 }
 
 footer {
@@ -123,7 +279,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #e8f6fc;
 }
 
 /*# sourceMappingURL=style.css.map */

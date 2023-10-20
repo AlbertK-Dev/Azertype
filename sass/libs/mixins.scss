@@ -1,0 +1,21 @@
+$base-color:skyblue;
+$base-text-color: rgb(13, 85, 114);
+
+@mixin bgBaseColorSaturation($nivDARK : 0%){
+   background-color: darken($base-color, $nivDARK);
+}
+@mixin tcBaseColorLuminosity($nivLIGHT : 0%){
+   color: lighten( $base-text-color , $nivLIGHT );
+}
+
+@mixin flexionCol{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+}
+@mixin flexcenter{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
