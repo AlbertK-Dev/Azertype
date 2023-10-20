@@ -5,8 +5,9 @@
  * @returns le message généré en fonction des données
  */
 function afficherResultat(score, nombreQuestions) {
-  let message = "Votre score est de " + score + " sur " + nombreQuestions;
-  return message;
+  let message = score + "/" + nombreQuestions;
+  let zoneAffichage = document.querySelector(".appblock__zoneScore .score");
+  zoneAffichage.innerHTML = message;
 }
 
 /**
@@ -74,6 +75,5 @@ function lancerJeux() {
       console.log("Aucun choix effectuer !");
       break;
   }
-  let message = afficherResultat(score, longueurDeLaListeChoisiParlUtilisateur);
-  alert(message);
+  afficherResultat(score, longueurDeLaListeChoisiParlUtilisateur);
 }

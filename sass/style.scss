@@ -68,6 +68,7 @@ section{
    @include bgBaseColorSaturation(50%);
    padding: 15px;
    color: whitesmoke;
+   margin-bottom: 100px;
    @media #{$ecran-moyen}{
       min-width: auto;
       width: 100%;;
@@ -75,9 +76,16 @@ section{
       padding: 2px;
       padding-top: 3%;
       padding-bottom: 3%;
+      margin-bottom: 100px;
    }
    @media #{$ecran-petit}{
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: auto;
+      justify-content: center;
       height: auto;
+      padding: 2px;
+      margin-bottom: 100px;
 
     }
    &__messagedechoix{
@@ -93,9 +101,9 @@ section{
       justify-content: space-between;
       @media #{$ecran-petit}{
          @include flexionCol();
-         width: 99%;
-         height: 50px;
-         font-size: 80%
+         width: 100%;
+         height: 100px;
+         font-size: 1.5em;
    
        }
       &--row{
@@ -103,8 +111,8 @@ section{
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 70px;
-            width: 70px;
+            max-width: 100px;
+            width: 50%;
             height: 50px;
          
           }
@@ -122,9 +130,14 @@ section{
       @include flexcenter();
       @include tcBaseColorLuminosity(20%);
       @media #{$ecran-petit}{
-         padding: 0;
-         height: 50px;
+        /* padding: 5px;*/
+         height: auto;
+         min-height: 40px;
+         width: 100%;
+         border-radius: 0%;
          font-size: 1.2em;
+         margin: 0%;
+
    
        }
       
@@ -135,7 +148,9 @@ section{
          @include flexionCol();
          height: auto;
          min-height: 50px;
-
+         width: 100%;
+         margin: 0%;
+         margin-top: 20px;
       }
       width: 90%;
       margin: 5px 2%;
@@ -151,8 +166,11 @@ section{
          @include tcBaseColorLuminosity(1%);
          font-size: 1.3em;
          @media #{$ecran-petit}{
-            width: 100%;
-            height: 35px;
+            width: 98%;
+            height: 100px;
+            border-radius: 0%;
+            margin: 0 0;
+            font-size: 1.5em;
     
           }
          &::placeholder{
@@ -170,9 +188,10 @@ section{
          font-size: 1.5em;
          cursor: pointer;
          @media #{$ecran-petit}{
-            width: 90%;
-            height: 35px;
-            margin-top: 5px;
+            width: 100%;
+            height: 45px;
+            margin-top: 0px;
+            border-radius: 0%;
     
           }
       }
@@ -189,8 +208,9 @@ section{
       @include tcBaseColorLuminosity(0%);
       @media #{$ecran-petit}{
          @include flexionCol();
-         border-radius: 10px;
-         width: 80%;
+         border-radius: 0px;
+         width: 100%;
+         margin-top: 20px;
 
       }
       .texte{
@@ -206,7 +226,7 @@ section{
       @include flexcenter();
       width: 50%;
       @media #{$ecran-petit}{
-         width: 99%;
+         width: 100%;
    
        }
       button{
@@ -219,7 +239,7 @@ section{
          cursor: pointer;
          @media #{$ecran-petit}{
             width: 100%;
-            border-radius: 10px;
+            border-radius: 0px 0px 10px 10px;
           }
       }
       form{
@@ -235,4 +255,6 @@ footer{
    @include bgBaseColorSaturation(50%);
    @include flexcenter();
    @include tcBaseColorLuminosity(70%);
+   position: fixed;
+   bottom: 0%;
 }
