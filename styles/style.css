@@ -234,6 +234,13 @@ section {
     border-radius: 0%;
   }
 }
+.appblock button:disabled {
+  background-color: dimgrey;
+  color: linen;
+  opacity: 1;
+  border: 0px;
+  cursor: default;
+}
 .appblock__zoneScore {
   width: 50%;
   border-radius: 50%;
