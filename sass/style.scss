@@ -194,6 +194,13 @@ section{
             border-radius: 0%;
     
           }
+          &:disabled{
+            background-color: dimgrey;
+            color: linen;
+            opacity: 1;
+            border: 0px;
+            cursor: default;
+          }
       }
    
       
