@@ -8,11 +8,9 @@ function afficherProposition(proposition) {
   zoneMot.textContent = proposition;
 }
 
-// function afficherTableau(Tableau) {
-//   for (let i = 0; i < Tableau.length; i++) {
-//     afficherProposition(Tableau[i]);
-//   }
-// }
+/**
+ * gestion du btn valider
+ */
 
 /**
  * la Fonction Main qui lance tous les autres
@@ -34,8 +32,9 @@ function lancerJeux() {
   //valeur par defaut
   radioMots.checked = true;
   Tableau_A_Parcourir = [...ListeDesMots];
+  zoneScore.textContent = score + "/" + Tableau_A_Parcourir.length;
 
-  radioMots.addEventListener("click", () => {
+  radioMots.addEventListener("change", () => {
     if (radioMots.checked) {
       Tableau_A_Parcourir = [...ListeDesMots];
       radioPhrases.checked = false;
@@ -43,10 +42,11 @@ function lancerJeux() {
       score = 0;
       zoneScore.textContent = score + "/" + Tableau_A_Parcourir.length;
       btnValider.disabled = false;
+      indexDuMot = 0;
     }
   });
 
-  radioPhrases.addEventListener("click", () => {
+  radioPhrases.addEventListener("change", () => {
     if (radioPhrases.checked) {
       Tableau_A_Parcourir = [...ListeDesPhrases];
       radioMots.checked = false;
@@ -54,6 +54,7 @@ function lancerJeux() {
       score = 0;
       zoneScore.textContent = score + "/" + Tableau_A_Parcourir.length;
       btnValider.disabled = false;
+      indexDuMot = 0;
     }
   });
 
@@ -67,7 +68,7 @@ function lancerJeux() {
     }
 
     txtFrappeUser.value = "";
-    if (Tableau_A_Parcourir[indexDuMot] === undefined) {
+    if (Tableau_A_Parcourir[indexDuMot + 1] === undefined) {
       afficherProposition(phraseDeFin);
       btnValider.disabled = true;
     } else {
@@ -76,7 +77,6 @@ function lancerJeux() {
       } else {
         afficherProposition(Tableau_A_Parcourir[indexDuMot + 1]);
       }
-
       txtFrappeUser.focus();
     }
     //mise à jour du score à chaque fois
