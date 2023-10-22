@@ -34,26 +34,23 @@ header {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  /*Gérons les h1 h2 et h3*/
 }
-
-/*Gérons les h1 h2 et h3*/
-h1 {
+header h1 {
   font-size: 3em;
   margin: 0;
   padding: 5px;
   text-align: center;
   color: #106689;
 }
-
-h2 {
+header h2 {
   font-size: 2em;
   margin: 0;
   padding: 5px;
   text-align: center;
   color: #1277a0;
 }
-
-h3 {
+header h3 {
   font-size: 1em;
   margin: 0;
   padding: 5px;
@@ -295,8 +292,63 @@ section {
     border-radius: 0px 0px 10px 10px;
   }
 }
-.appblock__zonePartage form {
-  display: none;
+
+.overlay {
+  position: fixed;
+  background: linear-gradient(to top, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 25%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.1) 100%);
+  padding-top: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.overlay__Close {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+}
+.overlay__Content {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  border: 1px solid yellow;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  .overlay__Content {
+    min-height: 300px;
+    width: 90%;
+    height: auto;
+  }
+}
+.overlay__Content form {
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #104b63;
+  padding: 10px;
+}
+.overlay__Footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0%;
 }
 
 footer {

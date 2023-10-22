@@ -7,6 +7,7 @@ body {
    box-sizing: border-box;
    margin: 0;
    padding: 0;
+   
 }
 
 main{ 
@@ -27,17 +28,18 @@ main{
 }
 header{
    @include flexionCol();
-}
-/*Gérons les h1 h2 et h3*/
+   /*Gérons les h1 h2 et h3*/
 @for $i from 1 through 3{
-  h#{$i}{
-   font-size: (4 - $i)*1em;
-   margin: 0;
-   padding: 5px;
-   text-align: center;
-   
-   @include tcBaseColorLuminosity(5*$i*1%);
-  }
+   h#{$i}{
+    font-size: (4 - $i)*1em;
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+    
+    @include tcBaseColorLuminosity(5*$i*1%);
+   }
+}
+
 
 } 
 section{
@@ -249,11 +251,12 @@ section{
             border-radius: 0px 0px 10px 10px;
           }
       }
-      form{
-         display: none;
-      }
    }
 }
+
+
+@import "libs/shareForm.scss";
+
 
 
 footer{

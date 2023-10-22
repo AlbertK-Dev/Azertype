@@ -1,0 +1,69 @@
+.overlay{
+    //display:none; 
+    //*!à réactivé plus tard*/
+    
+    position: fixed;
+    background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.1) 100%);
+    padding-top: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    @include tcBaseColorLuminosity(100%);
+    z-index: 5;
+   left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    //*? juste pour visualiser
+    // display: grid;
+    // grid-template-columns: 100%;
+    // grid-template-rows: 6fr 1fr;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    &__Close{
+       position: absolute;
+       top:5px;
+       right: 20px;
+       font-size:50px;
+       font-weight: bold;
+       @include tcBaseColorLuminosity(100%);
+    }
+    &__Content{
+       @media #{$ecran-petit}{
+          min-height: 300px;
+          width: 90%;
+          height: auto;
+          
+        }
+       position: absolute;
+       height: 400px;
+       width: 400px;
+       top: 50%;
+       left: 50%;
+       padding: 20px;
+       border: 1px solid yellow;
+       transform: translate(-50%,-50%);
+       form{
+        //taille formulaire
+        height: calc(100% - 20px);
+        width: calc(100% - 20px);
+        
+        //disposition formulaire
+        @include flexionCol();
+        justify-content: space-between;
+
+        //font et bordure
+        @include bgBaseColorSaturation(50%);
+        padding: 10px;
+        }
+    }
+
+    &__Footer{
+       @include flexcenter();
+       position: absolute;
+    //    top: 80%;
+    //   bottom: calc( 100% - 100px);
+      width: 100%;
+      bottom: 0%;
+       
+    }
+ 
+ 
+ }

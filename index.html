@@ -45,9 +45,44 @@
                 </div>
                 <div class="appblock__zonePartage">
                     <button type="button">partager</button>
+                </div>
+            </div>
+            <div class="overlay">
+                <span class="overlay__Close">&times;</span>
+
+                <div class="overlay__Content">
                     <form action="">
-                        un formulaire de partage
+                        <div class="row-1">
+                            <h1>Partagez Votre score</h1>
+                        </div>
+                        <div class="row-2">
+                            <div class="col-1">
+                                <label for="nomUser">Votre Nom </label>
+                            </div>
+                            <div class="col-2">
+                                <input type="text" name="nom" id="nomUser" class="text" placeholder="Votre nom...">
+                            </div>
+                        </div>
+
+                        <div class="row-2">
+                            <div class="col-1">
+                                <label for="emailUser">Avec qui voulez-vous partager votre score </label>
+                            </div>
+
+                            <div class="col-2">
+                                <input type="email" name="email" id="emailUser" class="text"
+                                    placeholder="nom@domaine.extension">
+                            </div>
+                        </div>
+
+                        <div class="row-1">
+                            <input type="submit" value="Envoyer">
+                        </div>
                     </form>
+                </div>
+
+                <div class="overlay__Footer">
+                    <em>By AlbertK</em>
                 </div>
 
             </div>
