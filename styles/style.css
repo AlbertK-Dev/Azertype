@@ -304,7 +304,7 @@ section {
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .overlay__Close {
   position: absolute;
@@ -312,7 +312,12 @@ section {
   right: 20px;
   font-size: 50px;
   font-weight: bold;
+  cursor: pointer;
   color: white;
+  transition: color 500ms;
+}
+.overlay__Close:hover {
+  color: #1799ce;
 }
 .overlay__Content {
   position: absolute;
@@ -320,18 +325,32 @@ section {
   width: 400px;
   top: 50%;
   left: 50%;
-  padding: 20px;
-  border: 1px solid yellow;
   transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid yellow;
+  padding: 20px;
 }
 @media screen and (max-width : 480px), screen and (max-device-width : 480px) {
   .overlay__Content {
-    min-height: 300px;
-    width: 90%;
+    min-height: 400px;
+    width: 98%;
     height: auto;
+    padding: 5px;
   }
 }
-.overlay__Content form {
+.overlay__Footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0%;
+  padding: 20px;
+}
+
+form {
   height: calc(100% - 20px);
   width: calc(100% - 20px);
   display: flex;
@@ -340,15 +359,94 @@ section {
   align-items: center;
   justify-content: space-between;
   background-color: #104b63;
+  border-radius: 10px;
   padding: 10px;
 }
-.overlay__Footer {
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  form {
+    min-height: 380px;
+    padding: 2px;
+    justify-content: space-between;
+  }
+}
+form div[class^=row] {
+  width: calc(100% - 13px);
+  min-height: 20%;
+}
+form .row-1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+}
+form .row-1 h1 {
   width: 100%;
-  bottom: 0%;
+  text-decoration: underline;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  text-transform: uppercase;
+}
+form .row-1 input {
+  width: 50%;
+  height: 70%;
+  font-size: 1.7em;
+  cursor: pointer;
+  color: #1277a0;
+  background-color: #5bbce4;
+  border-radius: 10px;
+  border: 3px ridge skyblue;
+  transition: all 500ms;
+}
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  form .row-1 input {
+    font-size: 1.2em;
+    width: 80%;
+  }
+}
+form .row-1 input:hover, form .row-1 input:focus {
+  border-width: 1px;
+  border-radius: 0px 51% 49% 0px;
+  width: 80%;
+  color: white;
+  background-color: #104b63;
+  font-size: 2em;
+  background: linear-gradient(to right, rgb(4, 68, 94) 0%, skyblue 90%, whitesmoke 100%);
+}
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  form .row-1 input:hover, form .row-1 input:focus {
+    font-size: 1em;
+    width: 98%;
+  }
+}
+form .row-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+form .row-2 .col-1 {
+  width: 100%;
+}
+form .row-2 .col-2 {
+  min-height: 60%;
+  width: 98%;
+  margin-bottom: 2%;
+}
+form .row-2 .col-2 input {
+  width: calc(100% - 13px);
+  height: 90%;
+  border-radius: 15px;
+  border: 4px solid skyblue;
+  font-size: 1.5em;
+  color: #31b3e7;
+}
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  form .row-2 .col-2 input {
+    font-size: 1.2em;
+    height: 40px;
+  }
+}
+form .row-2 .col-2 input::placeholder {
+  color: #8cd5f2;
 }
 
 footer {
