@@ -405,7 +405,6 @@ form .row-1 input {
 form .row-1 input:hover, form .row-1 input:focus {
   border-width: 1px;
   border-radius: 0px 51% 49% 0px;
-  width: 80%;
   color: white;
   background-color: #104b63;
   font-size: 2em;
