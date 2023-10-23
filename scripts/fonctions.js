@@ -26,21 +26,22 @@ function lancerJeux() {
   let Tableau_A_Parcourir;
   let radioMots = document.querySelector("#Mots");
   let radioPhrases = document.querySelector("#Phrases");
+  let nbreDeQuestionPoser = 0;
 
   //ce qui à été sélectionné
 
   //valeur par defaut
   radioMots.checked = true;
   Tableau_A_Parcourir = [...ListeDesMots];
-  zoneScore.textContent = score + "/" + Tableau_A_Parcourir.length;
+  zoneScore.textContent = score + "/" + nbreDeQuestionPoser;
 
   radioMots.addEventListener("change", () => {
     if (radioMots.checked) {
       Tableau_A_Parcourir = [...ListeDesMots];
       radioPhrases.checked = false;
       afficherProposition(Tableau_A_Parcourir[0]);
-      score = 0;
-      zoneScore.textContent = score + "/" + Tableau_A_Parcourir.length;
+      //score = 0;
+      zoneScore.textContent = score + "/" + nbreDeQuestionPoser;
       btnValider.disabled = false;
       indexDuMot = 0;
     }
@@ -51,8 +52,8 @@ function lancerJeux() {
       Tableau_A_Parcourir = [...ListeDesPhrases];
       radioMots.checked = false;
       afficherProposition(Tableau_A_Parcourir[0]);
-      score = 0;
-      zoneScore.textContent = score + "/" + Tableau_A_Parcourir.length;
+      // score = 0;
+      zoneScore.textContent = score + "/" + nbreDeQuestionPoser;
       btnValider.disabled = false;
       indexDuMot = 0;
     }
@@ -61,6 +62,7 @@ function lancerJeux() {
   afficherProposition(Tableau_A_Parcourir[indexDuMot]);
 
   btnValider.addEventListener("click", () => {
+    nbreDeQuestionPoser++;
     if (txtFrappeUser.value === zoneMot.textContent) {
       score++;
     } else {
@@ -80,7 +82,7 @@ function lancerJeux() {
       txtFrappeUser.focus();
     }
     //mise à jour du score à chaque fois
-    zoneScore.textContent = score + "/" + Tableau_A_Parcourir.length;
+    zoneScore.textContent = score + "/" + nbreDeQuestionPoser;
 
     indexDuMot++;
   });
