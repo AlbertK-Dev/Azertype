@@ -9,10 +9,6 @@ function afficherProposition(proposition) {
 }
 
 /**
- * gestion du btn valider
- */
-
-/**
  * la Fonction Main qui lance tous les autres
  */
 function lancerJeux() {
