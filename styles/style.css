@@ -329,7 +329,6 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid yellow;
   padding: 20px;
 }
 @media screen and (max-width : 480px), screen and (max-device-width : 480px) {
@@ -361,6 +360,9 @@ form {
   background-color: #104b63;
   border-radius: 10px;
   padding: 10px;
+}
+form:hover {
+  box-shadow: 0px -5px 10px 5px inset skyblue;
 }
 @media screen and (max-width : 480px), screen and (max-device-width : 480px) {
   form {
@@ -404,7 +406,8 @@ form .row-1 input {
 }
 form .row-1 input:hover, form .row-1 input:focus {
   border-width: 1px;
-  border-radius: 0px 51% 49% 0px;
+  box-shadow: 5px 5px 10px inset white;
+  border-radius: 0px 50% 50% 0px;
   color: white;
   background-color: #104b63;
   font-size: 2em;
