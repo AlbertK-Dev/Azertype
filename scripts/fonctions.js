@@ -15,7 +15,8 @@ function lancerJeux() {
   let txtFrappeUser = document.querySelector(".txt--FrappeUser");
   let btnValider = document.querySelector(".btn--Valider");
   let indexDuMot = 0;
-  let phraseDeFin = "Le jeu est terminée !";
+  let phraseDeFin =
+    "Fin de la liste actuel, veuillez sélectionner une autre liste!";
   let score = 0;
   let zoneMot = document.querySelector(".appblock__zoneMot");
   let zoneScore = document.querySelector(".score");
