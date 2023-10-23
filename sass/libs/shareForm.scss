@@ -1,7 +1,6 @@
 .overlay{
-    //display:none; 
-    //*!à réactivé plus tard*/
-    
+    display:none; 
+    animation: fadein 1s linear ;
     position: fixed;
     background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.1) 100%);
     padding-top: 100px;
