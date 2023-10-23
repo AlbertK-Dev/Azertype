@@ -14,6 +14,39 @@ overlayCrossClose.addEventListener("click", () => {
 });
 
 /**
+ * les fonctions de validation
+ */
+/**
+ * cette fonction vérifie si un nom d'utilisateur est valide ou nom
+ * @param {string} Nom le nom à valider
+ * @returns true ou false
+ */
+function validerNom(Nom) {
+  const regex = new RegExp("[a-zA-Z]{1}[a-zA-Z1-9]{2,}");
+  let valide = regex.test(Nom);
+  return valide;
+}
+
+/**
+ * cette fonction vérifie si l'email entrer par l'utilisateur
+ * correspond au format d'email standard
+ * @param {string} Email email à valider
+ * @returns true or false
+ */
+function validerEmail(Email) {
+  const regex = new RegExp("[a-z0-9._-]+@[a-z0-9._-]+.[a-z0-9._-]+");
+  let valide = regex.test(Email);
+  return valide;
+}
+
+function validateForm() {
+  let nom = document.getElementById("nomUser").value;
+  let email = document.getElementById("emailReceiver").value;
+  allValide = validerEmail(email) && validerNom(nom);
+  return allValide;
+}
+
+/**
  * Gestion du formulaire
  */
 const shareForm = document.getElementById("shareForm");
@@ -26,11 +59,16 @@ shareForm.addEventListener("submit", (event) => {
   let email = document.getElementById("emailReceiver").value;
   let score = document.querySelector(".appblock__zoneScore .score").innerHTML;
 
-  //Gestion de l'email
-  let objet = "Azertype - Fast typing Game";
-  let message = madeEmailMsg(score, nom, email);
-  console.log(objet);
-  console.log(message);
+  //Validation des Champs
+  if (validateForm()) {
+    //Gestion de l'email
+    let objet = "Azertype - Fast typing Game";
+    let message = madeEmailMsg(score, nom, email);
+    console.log(objet);
+    console.log(message);
+  } else {
+    alert("Les données saisies ne sont pas valide");
+  }
 });
 
 /**
