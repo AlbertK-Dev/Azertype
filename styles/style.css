@@ -410,6 +410,12 @@ form:hover {
     justify-content: space-between;
   }
 }
+form .errorMessage {
+  color: rgba(250, 2, 2, 0.8);
+  text-align: center;
+  text-shadow: 2px 2px 5px rgb(135, 150, 235);
+  background-color: white;
+}
 form div[class^=row] {
   width: calc(100% - 13px);
   min-height: 20%;

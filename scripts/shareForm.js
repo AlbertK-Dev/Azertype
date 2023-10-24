@@ -60,20 +60,19 @@ function validateForm() {
 
 function afficherMsgErreur(message) {
   let span = `
-  <span class="errorMessage" style="color:red;"> ${message} </span>
+  <span class="errorMessage" style="color: rgba(255,0,0,0.8);text-align:center;"> ${message} </span>
   `;
 
-  let myOverlay = document.querySelector(".overlay__Footer");
-  myOverlay.innerHTML = span;
+  let myOverlayForm = document.querySelector(".overlay__Content form");
+  myOverlayForm.innerHTML += span;
 }
 
 function effacerMsgErreur() {
-  let author = `
-  <em class="author" style="color:green;"> By Albert-K </em>
-  `;
-
-  let myOverlay = document.querySelector(".overlay__Footer");
-  myOverlay.innerHTML = author;
+  let myOverlayForm = document.querySelector(".overlay__Content form");
+  let child = document.querySelector(".errorMessage");
+  if (child) {
+    myOverlayForm.removeChild(child);
+  }
 }
 
 /**

@@ -94,6 +94,12 @@
          padding: 2px;
          justify-content: space-between;
         }
+        .errorMessage{
+         color: rgba(250, 2, 2, 0.8);
+         text-align:center;
+         text-shadow: 2px 2px 5px rgb(135, 150, 235);
+         background-color: white;
+        }
 
         div[class^="row"]{
        //  border: 3px solid seashell;
