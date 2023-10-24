@@ -14,6 +14,7 @@ main{
    height: 700px;
    padding: 50px;
    padding-bottom: 0%;
+   //overflow-x: auto;
    margin: auto;
    @include bgBaseColorSaturation(0%);
    @include flexionCol();
@@ -21,7 +22,7 @@ main{
       padding: 20px;
    }
    @media #{$ecran-petit}{
-      padding: 5px;
+      padding: 1px;
       height: auto;
 
     }
@@ -37,6 +38,12 @@ header{
     text-align: center;
     
     @include tcBaseColorLuminosity(5*$i*1%);
+    @media #{$ecran-petit}{
+      padding: 0%;
+      height: auto;
+      font-size: (3 - $i*0.7)*1em;
+
+    }
    }
 }
 
@@ -54,7 +61,8 @@ section{
       height: 65%;
    }
    @media #{$ecran-petit}{
-      padding: 0;
+      padding: 0%;
+      min-height: 500px;
       height: auto;
 
     }
@@ -88,6 +96,7 @@ section{
       height: auto;
       padding: 2px;
       margin-bottom: 100px;
+      width: 98%;
 
     }
    &__messagedechoix{
@@ -128,6 +137,7 @@ section{
       border-radius: 15px;
       font-size: 2em;
       font-weight: bold;
+      text-align: center;
       @include bgBaseColorSaturation(0%);
       @include flexcenter();
       @include tcBaseColorLuminosity(20%);
@@ -186,7 +196,7 @@ section{
          border-radius: 10px;
          border: 2px ridge skyblue;
          @include bgBaseColorSaturation(40%);
-         @include tcBaseColorLuminosity(70%);
+         @include tcBaseColorLuminosity(30%);
          font-size: 1.5em;
          cursor: pointer;
          @media #{$ecran-petit}{
@@ -195,6 +205,11 @@ section{
             margin-top: 0px;
             border-radius: 0%;
     
+
+          }
+          &:hover{
+            @include bgBaseColorSaturation(40%);
+         @include tcBaseColorLuminosity(70%);
           }
           &:disabled{
             background-color: dimgrey;

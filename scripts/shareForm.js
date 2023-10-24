@@ -22,28 +22,58 @@ overlayCrossClose.addEventListener("click", () => {
  * @returns true ou false
  */
 function validerNom(Nom) {
+  if (Nom === "") {
+    throw new Error(`veuillez saisir votre nom !`);
+  }
   const regex = new RegExp("[a-zA-Z]{1}[a-zA-Z1-9]{2,}");
   let valide = regex.test(Nom);
-  return valide;
+
+  if (valide === false) {
+    throw new Error(
+      `Le nom doit contenir au moins 03 caractères sans espace commençant par une lettre`
+    );
+  }
 }
 
 /**
  * cette fonction vérifie si l'email entrer par l'utilisateur
  * correspond au format d'email standard
  * @param {string} Email email à valider
- * @returns true or false
  */
 function validerEmail(Email) {
+  if (Email === "") {
+    throw new Error(`Le champs email ne peut etre vide !`);
+  }
   const regex = new RegExp("[a-z0-9._-]+@[a-z0-9._-]+.[a-z0-9._-]+");
   let valide = regex.test(Email);
-  return valide;
+  if (valide === false) {
+    throw new Error(`Le format de l'adresse email est incorrect`);
+  }
 }
 
 function validateForm() {
   let nom = document.getElementById("nomUser").value;
   let email = document.getElementById("emailReceiver").value;
-  allValide = validerEmail(email) && validerNom(nom);
-  return allValide;
+  validerNom(nom);
+  validerEmail(email);
+}
+
+function afficherMsgErreur(message) {
+  let span = `
+  <span class="errorMessage" style="color:red;"> ${message} </span>
+  `;
+
+  let myOverlay = document.querySelector(".overlay__Footer");
+  myOverlay.innerHTML = span;
+}
+
+function effacerMsgErreur() {
+  let author = `
+  <em class="author" style="color:green;"> By Albert-K </em>
+  `;
+
+  let myOverlay = document.querySelector(".overlay__Footer");
+  myOverlay.innerHTML = author;
 }
 
 /**
@@ -51,23 +81,28 @@ function validateForm() {
  */
 const shareForm = document.getElementById("shareForm");
 shareForm.addEventListener("submit", (event) => {
-  //empècher le comportemnt par défaut
-  event.preventDefault();
+  //gestion des erreur avec try catch
+  try {
+    //effaçons le message d'erreur
+    effacerMsgErreur("");
+    //empècher le comportemnt par défaut
+    event.preventDefault();
 
-  //récupération des informations du formulaire
-  let nom = document.getElementById("nomUser").value;
-  let email = document.getElementById("emailReceiver").value;
-  let score = document.querySelector(".appblock__zoneScore .score").innerHTML;
+    //récupération des informations du formulaire
+    let nom = document.getElementById("nomUser").value;
+    let email = document.getElementById("emailReceiver").value;
+    let score = document.querySelector(".appblock__zoneScore .score").innerHTML;
 
-  //Validation des Champs
-  if (validateForm()) {
+    //Validation des Champs
+    validateForm();
+
     //Gestion de l'email
     let objet = "Azertype - Fast typing Game";
     let message = madeEmailMsg(score, nom, email);
     console.log(objet);
     console.log(message);
-  } else {
-    alert("Les données saisies ne sont pas valide");
+  } catch (error) {
+    afficherMsgErreur(error.message);
   }
 });
 

@@ -32,7 +32,7 @@ main {
 }
 @media screen and (max-width : 480px), screen and (max-device-width : 480px) {
   main {
-    padding: 5px;
+    padding: 1px;
     height: auto;
   }
 }
@@ -51,6 +51,13 @@ header h1 {
   text-align: center;
   color: #106689;
 }
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  header h1 {
+    padding: 0%;
+    height: auto;
+    font-size: 2.3em;
+  }
+}
 header h2 {
   font-size: 2em;
   margin: 0;
@@ -58,12 +65,26 @@ header h2 {
   text-align: center;
   color: #1277a0;
 }
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  header h2 {
+    padding: 0%;
+    height: auto;
+    font-size: 1.6em;
+  }
+}
 header h3 {
   font-size: 1em;
   margin: 0;
   padding: 5px;
   text-align: center;
   color: #1588b7;
+}
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  header h3 {
+    padding: 0%;
+    height: auto;
+    font-size: 0.9em;
+  }
 }
 
 section {
@@ -83,7 +104,8 @@ section {
 }
 @media screen and (max-width : 480px), screen and (max-device-width : 480px) {
   section {
-    padding: 0;
+    padding: 0%;
+    min-height: 500px;
     height: auto;
   }
 }
@@ -122,6 +144,7 @@ section {
     height: auto;
     padding: 2px;
     margin-bottom: 100px;
+    width: 98%;
   }
 }
 .appblock__messagedechoix {
@@ -164,6 +187,7 @@ section {
   border-radius: 15px;
   font-size: 2em;
   font-weight: bold;
+  text-align: center;
   background-color: skyblue;
   display: flex;
   justify-content: center;
@@ -227,7 +251,7 @@ section {
   border-radius: 10px;
   border: 2px ridge skyblue;
   background-color: #186c8e;
-  color: #e8f6fc;
+  color: #31b3e7;
   font-size: 1.5em;
   cursor: pointer;
 }
@@ -238,6 +262,10 @@ section {
     margin-top: 0px;
     border-radius: 0%;
   }
+}
+.appblock button:hover {
+  background-color: #186c8e;
+  color: #e8f6fc;
 }
 .appblock button:disabled {
   background-color: dimgrey;
@@ -398,6 +426,12 @@ form .row-1 h1 {
   font-family: "Times New Roman", Times, serif;
   text-transform: uppercase;
 }
+@media screen and (max-width : 480px), screen and (max-device-width : 480px) {
+  form .row-1 h1 {
+    font-size: 0.9em;
+    width: 80%;
+  }
+}
 form .row-1 input {
   width: 50%;
   height: 70%;
@@ -411,6 +445,7 @@ form .row-1 input {
 }
 @media screen and (max-width : 480px), screen and (max-device-width : 480px) {
   form .row-1 input {
+    margin-bottom: 20px;
     font-size: 1.2em;
     width: 80%;
   }
@@ -418,7 +453,7 @@ form .row-1 input {
 form .row-1 input:hover, form .row-1 input:focus {
   border-width: 1px;
   box-shadow: 5px 5px 10px inset white;
-  border-radius: 0px 50% 50% 0px;
+  border-radius: 50% 50% 50% 50%;
   color: white;
   background-color: #104b63;
   font-size: 2em;
@@ -428,6 +463,7 @@ form .row-1 input:hover, form .row-1 input:focus {
   form .row-1 input:hover, form .row-1 input:focus {
     font-size: 1em;
     width: 98%;
+    margin-bottom: 20px;
   }
 }
 form .row-2 {
@@ -460,6 +496,9 @@ form .row-2 .col-2 input {
 }
 form .row-2 .col-2 input::placeholder {
   color: #8cd5f2;
+}
+form .row-2 .col-2 input:hover, form .row-2 .col-2 input:focus {
+  border: 3px solid blue;
 }
 
 footer {

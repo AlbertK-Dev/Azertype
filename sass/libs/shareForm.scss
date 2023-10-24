@@ -109,6 +109,10 @@
             text-align: center;
             font-family: 'Times New Roman', Times, serif;
             text-transform: uppercase;
+            @media #{$ecran-petit}{
+               font-size: 0.9em;
+               width: 80%;
+              }
          }
          input{
             width: 50%;
@@ -122,6 +126,7 @@
             border: 3px ridge skyblue;
             transition: all 500ms;
             @media #{$ecran-petit}{
+               margin-bottom: 20px;
                font-size: 1.2em;
                width: 80%;
               }
@@ -130,13 +135,14 @@
                
                border-width: 1px;
                box-shadow: 5px 5px 10px inset white;
-               border-radius: 0px 50% 50% 0px;
+               border-radius: 50% 50% 50% 50%;
                @include tcBaseColorLuminosity(100%);
                @include bgBaseColorSaturation(50%);
                font-size : 2em;
                @media #{$ecran-petit}{
                   font-size: 1em;
                   width: 98%;
+                  margin-bottom: 20px;
                  }
                background: linear-gradient(to right, rgb(4, 68, 94)0%, skyblue 90%, whitesmoke 100%);
               
@@ -170,6 +176,9 @@
             &::placeholder{
                @include tcBaseColorLuminosity(50%);
                
+            }
+            &:hover, &:focus{
+               border: 3px solid blue;
             }
          }}
         }
