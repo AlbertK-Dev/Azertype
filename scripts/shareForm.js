@@ -100,6 +100,7 @@ shareForm.addEventListener("submit", (event) => {
     let message = madeEmailMsg(score, nom, email);
     console.log(objet);
     console.log(message);
+    envoyerEmail(email, message);
   } catch (error) {
     afficherMsgErreur(error.message);
   }
@@ -125,4 +126,8 @@ function madeEmailMsg(score, nom, email) {
 
   let message = introduction + corps + conclusion;
   return message;
+}
+function envoyerEmail(emailDest, message) {
+  let mailto = `mailto:${emailDest}?subject=Partage du score Azertype&body= ${message}`;
+  location.href = mailto;
 }
