@@ -60,7 +60,7 @@ function validateForm() {
 
 function afficherMsgErreur(message) {
   let span = `
-  <span class="errorMessage" style="color: rgba(255,0,0,0.8);text-align:center;"> ${message} </span>
+  <span class="errorMessage"> ${message} </span>
   `;
 
   let myOverlayForm = document.querySelector(".overlay__Content form");
